@@ -1,7 +1,5 @@
 .App {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  padding: 50px;
   background-color: #808080;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
 }

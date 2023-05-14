@@ -1,31 +1,44 @@
 // react
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // components
-import { ChatSideBar } from "./components/ChatSideBar";
 import { ChatBody } from "./components/ChatBody";
 import { InstaceModal } from "./components/InstanceModal";
 
 // styles
 import "./App.css";
+import { PhoneNumberModal } from "./components/PhoneNumberModal";
 
 function App() {
   // states
+  const [instanceModalIsOpen, setInstanceModalIsOpen] = useState<boolean>(true);
+  const [phoneModalIsOpen, setPhoneNumberIsOpen] = useState<boolean>(false);
   const [idInstance, setIdInstance] = useState<string>("");
   const [apiTokenInstance, setApiTokenInstance] = useState<string>("");
-
-  useEffect(() => {
-    console.log(idInstance, apiTokenInstance);
-  }, [idInstance, apiTokenInstance]);
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
 
   return (
     <div className="App">
-      <ChatSideBar />
-      <ChatBody />
+      <ChatBody
+        phoneNumber={phoneNumber}
+        idInstance={idInstance}
+        apiTokenInstance={apiTokenInstance}
+      />
       <InstaceModal
+        isOpen={instanceModalIsOpen}
+        onClose={() => {
+          setInstanceModalIsOpen(false);
+          setPhoneNumberIsOpen(true);
+        }}
         title="Enter idInstance and apiTokenInstance"
         setIdInstance={setIdInstance}
         setApiTokenInstance={setApiTokenInstance}
+      />
+      <PhoneNumberModal
+        isOpen={phoneModalIsOpen}
+        onClose={() => setPhoneNumberIsOpen(false)}
+        title="Enter phone number"
+        setPhoneNumber={setPhoneNumber}
       />
     </div>
   );
