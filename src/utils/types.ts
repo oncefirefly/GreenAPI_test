@@ -30,3 +30,13 @@ export interface ChatProps {
   idInstance: string;
   apiTokenInstance: string;
 }
+
+export interface Message {
+  sender: string;
+  text: string;
+  timeStamp: number;
+}
+
+export interface ChatDialogProps {
+  message: Message;
+}

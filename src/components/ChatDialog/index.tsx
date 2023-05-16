@@ -1,9 +1,11 @@
-export const ChatDialog = () => {
+import { ChatDialogProps } from "../../utils/types";
+import styles from "./ChatDialog.module.css";
+
+export const ChatDialog = ({ message }: ChatDialogProps) => {
   return (
-    <div className="container darker">
-      <img src="/w3images/avatar_g2.jpg" alt="Avatar" className="right" />
-      <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-      <span className="time-left">11:05</span>
+    <div className={styles.chat__dialog}>
+      <p className={styles.chat__sender}>{message.sender}</p>
+      <p className={styles.chat__text_blob}>{message.text}</p>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+p {
+  margin: 0;
+}
+
+.chat__dialog {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat__sender {
+  width: fit-content;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.chat__text_blob {
+  width: fit-content;
+  min-height: 20px;
+  padding: 5px;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #075e54;
+}

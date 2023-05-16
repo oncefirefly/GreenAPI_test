@@ -8,4 +8,5 @@ export const receiveMessage = (idInstance: string, apiTokenInstance: string) =>
     }
   )
     .then((res) => res.json())
+    .then((data) => data.body)
     .catch((err) => console.log(err));

@@ -4,5 +4,8 @@ export const deleteNotification = (
   messageId: string
 ) =>
   fetch(
-    `https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${messageId}`
-  );
+    `https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${messageId}`,
+    {
+      method: "DELETE",
+    }
+  ).then((res) => res.json());
