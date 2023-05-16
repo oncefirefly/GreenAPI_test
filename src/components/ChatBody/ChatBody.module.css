@@ -17,6 +17,11 @@
   justify-content: flex-start;
 }
 
+.chat__header p {
+  color: #fff;
+  font-weight: 600;
+}
+
 .chat__content {
   display: flex;
   flex-direction: column;
